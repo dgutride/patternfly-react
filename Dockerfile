@@ -4,4 +4,4 @@ WORKDIR /usr/src
  COPY . .
  RUN yarn
  # We run the build and expose as /public
-RUN yarn build:docs && mv packages/react-docs/public /public
+RUN yarn build:docs && mv packages/patternfly-4/react-docs/public /public

@@ -1,8 +1,9 @@
 *
-!packages/react-core
-!packages/react-docs
-!packages/react-styles
-!packages/react-tokens
+!packages/patternfly-4/react-core
+!packages/patternfly-4/react-docs
+!packages/patternfly-4/react-styles
+!packages/patternfly-4/react-tokens
+!packages/react-icons
 !lerna.json
 !package.json
 !yarn.lock
