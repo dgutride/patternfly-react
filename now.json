@@ -1,4 +1,5 @@
 {
   "name": "patternfly-react",
-  "type": "static"
+  "type": "static",
+  "public": true
 }

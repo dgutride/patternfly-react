@@ -123,6 +123,7 @@
     "lint:fix": "yarn lint:js --fix && yarn lint:styles --fix",
     "lint:js": "eslint --max-warnings 0 packages storybook scripts",
     "lint:styles": "yarn stylelint",
+    "now-build": "yarn build:docs",
     "precommit": "lint-staged",
     "prettier": "prettier --write 'storybook/**/*.js' 'packages/**/*.js' 'scripts/**/*.js'",
     "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform",
