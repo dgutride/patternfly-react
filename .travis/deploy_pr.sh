@@ -5,6 +5,13 @@ REPO_OWNER=${REPO_SLUG_ARRAY[0]}
 REPO_NAME=${REPO_SLUG_ARRAY[1]}
 DEPLOY_PATH=./.public
 
+if [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${ALREADY_DEPLOYED// }" ]
+then
+  yarn storybook:build
+  yarn build:prdocs
+  cp -r .out/ .public/patternfly-3
+  cp -r packages/patternfly-4/react-docs/public .public/patternfly-4
+fi
 
 DEPLOY_SUBDOMAIN_UNFORMATTED_LIST=()
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]
@@ -41,7 +48,8 @@ do
   DEPLOY_SUBDOMAIN=`echo "$DEPLOY_SUBDOMAIN_UNFORMATTED" | sed -r 's/[\/|\.]+/\-/g'`
   DEPLOY_DOMAIN=https://${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}.surge.sh
   surge --project ${DEPLOY_PATH} --domain $DEPLOY_DOMAIN;
-  if [ "$TRAVIS_PULL_REQUEST" != "false" ]
+  ALREADY_DEPLOYED=`surge list | grep $DEPLOY_DOMAIN`
+  if [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${ALREADY_DEPLOYED// }" ]
   then
     # Using the Issues api instead of the PR api
     # Done so because every PR is an issue, and the issues api allows to post general comments,
