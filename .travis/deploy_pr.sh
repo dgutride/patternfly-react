@@ -47,11 +47,11 @@ do
   # https://en.wikipedia.org/wiki/Domain_Name_System#Domain_name_syntax
   DEPLOY_SUBDOMAIN=`echo "$DEPLOY_SUBDOMAIN_UNFORMATTED" | sed -r 's/[\/|\.]+/\-/g'`
   DEPLOY_DOMAIN=https://${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}.surge.sh
-  ALREADY_DEPLOYED=`surge list | grep $DEPLOY_DOMAIN`
+  ALREADY_DEPLOYED=`surge list | grep ${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}`
   echo 'Already deployed: ' $ALREADY_DEPLOYED
 
   surge --project ${DEPLOY_PATH} --domain $DEPLOY_DOMAIN;
-  if [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${ALREADY_DEPLOYED// }" ]
+  if [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -z "${ALREADY_DEPLOYED// }" ]
   then
     echo 'Adding github PR comment'
     # Using the Issues api instead of the PR api
