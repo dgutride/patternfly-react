@@ -5,7 +5,7 @@ REPO_OWNER=${REPO_SLUG_ARRAY[0]}
 REPO_NAME=${REPO_SLUG_ARRAY[1]}
 DEPLOY_PATH=./.public
 
-if [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${ALREADY_DEPLOYED// }" ]
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]
 then
   yarn storybook:build
   yarn build:prdocs
