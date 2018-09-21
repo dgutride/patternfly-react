@@ -23,6 +23,7 @@ script:
 after_success:
 - .travis/after_success.sh
 - .travis/release.sh
+- yarn build:docs
 - chmod ugo+x ./scripts/deploy.sh
 - ./scripts/deploy.sh
 git:
