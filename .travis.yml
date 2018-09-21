@@ -23,7 +23,9 @@ script:
 after_success:
 - .travis/after_success.sh
 - .travis/release.sh
-- yarn build:docs
+- yarn build:prdocs
+- chmod ugo+x .travis/copy_sites.sh
+- .travis/copy_sites.sh
 - chmod ugo+x ./scripts/deploy.sh
 - ./scripts/deploy.sh
 git:
