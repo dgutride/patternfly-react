@@ -109,6 +109,7 @@
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs lerna exec --stream --ignore \"$(node ./scripts/getGlobPackages.js babel)\" --  babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm lerna exec --stream --ignore \"$(node ./scripts/getGlobPackages.js babel)\" -- babel src --out-dir dist/esm",
     "build:docs": "yarn build && lerna run build --scope=@patternfly/react-docs --stream",
+    "build:prdocs": "yarn build && lerna run pr-build --scope=@patternfly/react-docs --stream",
     "build:tokens": "lerna run build --scope=@patternfly/react-tokens --stream",
     "build:icons": "lerna run prebuild --scope=@patternfly/react-icons --stream",
     "build:ts": "node ./scripts/copyTS.js",
