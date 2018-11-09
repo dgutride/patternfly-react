@@ -5,15 +5,13 @@ dependencies:
   manifest_updates:
     filters:
     # any packages with "patternfly-next" will get all updates
-    - name: '@patternfly/patternfly-next'
+    - name: "@patternfly/patternfly-next"
       versions: Y.Y.Y
     # everything else will be ignored
     - name: ".*"
       enabled: false
-settings:
-  commit_message_prefix: "chore: "
+  settings:
+    commit_message_prefix: "chore: "
 
-  pullrequest_notes: This is an automatically created PR to update dependencies.
-
-  # automatically close outdated open PRs (works with GitHub only)
-  related_pr_behavior: close
+    # automatically close outdated open PRs (works with GitHub only)
+    related_pr_behavior: close
