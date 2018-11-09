@@ -5,7 +5,7 @@ dependencies:
   manifest_updates:
     filters:
     # any packages with "patternfly-next" will get all updates
-    - name: "@patternfly/patternfly-next"
+    - name: "@patternfly\/patternfly-next"
       versions: Y.Y.Y
     # everything else will be ignored
     - name: ".*"
