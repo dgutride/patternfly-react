@@ -326,9 +326,15 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.0.0.tgz#76b0e89e6f8738ca8154195baf5b8e6a80bc9105"
 
-"@patternfly/patternfly-next@1.0.69":
-  version "1.0.69"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.69.tgz#58184574f6f884bf3d5270a3a7474c0fe6057ddb"
+"@patternfly/patternfly-next@1.0.68":
+  version "1.0.68"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.68.tgz#1a35d718476a680ab76eb18e2f3ee85251517099"
+  integrity sha512-CY+bpTn0xhzbyw0sggd1FAq/Kyb1YW5Hx+uYM14XXWP8GAOAL6kMAc37V2GZvyTYOKL8XSL7JFFTbFce1WbXsA==
+
+"@patternfly/patternfly-next@1.0.72":
+  version "1.0.72"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.72.tgz#47b4773f50b5840fb86e2364166ba9a5734d4c42"
+  integrity sha512-fRH+LwRP2Cc7rBQzzuKArrbEYXyXPwxoBxw3lZ2iK1UmwZ8Nk5jAGAJoOsC5xdbhIMIvHhmM46Ep1a2R2phwjw==
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
